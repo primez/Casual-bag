@@ -1,0 +1,21 @@
+{
+  "name": "casual-bag",
+  "version": "1.0.0",
+  "description": "Simple e-commerce solution. Run npx babel js --watch --out-file script-compiled.js --presets=babel-preset-es2015",
+  "main": "main.js",
+  "scripts": {},
+  "keywords": [
+    "e-commerce"
+  ],
+  "author": "Anastasiia Tishchenko",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
