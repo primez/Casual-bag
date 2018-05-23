@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(/fonts/Roboto/Roboto-Medium.ttf);
+    src: url(/fonts/Roboto/Roboto-Regular.ttf);
+    src: url(/fonts/Roboto/Roboto-Bold.ttf);
+
+    font-family: 'Open Sans';
+    src: url(/fonts/Open_Sans/OpenSans-Regular.ttf);
+    }
+
+    
+p {
+    position: relative;
+}
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  html {
+    font: 16px Open Sans;
+    letter-spacing: 0.03em;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .index-logo {
+    float: left;
+    width: 25%;
+  }
+
+  .user-block {
+    float: right;
+    width: 25%;
+  }
+
+  .sign-up, .cart-info {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.cart-info::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-image: url(/img/icons.png);
+    background-position: -65px 1px;
+    position: absolute;
+    bottom: 1.6em;
+    right: 2.2em;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+  @media screen and (min-width: 375px) {
+      img {
+        width: 100%;
+      }
+
+      .container {
+        width: 100%;
+        padding: 0 1.25rem;
+        position: relative;
+        }
+
+        header {
+            min-height: 70px;
+        }
+
+      .logo {
+        display: none;
+      }
+
+      .logo-for-mobile {
+        font-size: 24px; 
+        font-weight: bold;
+        margin: 0.9em 0;
+      }
+
+      .sign-up {
+        display: none;
+      }
+
+      .cart-info p{
+          font: 12px 'Roboto';
+          margin: 2em 0;
+      }
+
+      nav {
+        width: 54px;
+        height: 70px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        background-image: url(/img/icons.png);
+        background: no-repeat;
+      }
+
+      .nav-icon {
+          width: 14px;
+          height: 12px;
+          vertical-align: middle;
+          content: "dfgfd";
+          background-image: url(/img/icons.png);
+          background-position: 0px 15px;
+          background: no-repeat center center;
+          background-size: 100% 100%;
+      }
+
+      .nav-menu {
+        display: none;
+    }
+
+      .nav-menu li {
+        position: relative;
+      }
+
+      .nav-link {
+        display: block;
+      }
+
+      .search-panel {
+          display: none;
+      }
+  }
