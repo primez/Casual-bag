@@ -15,7 +15,6 @@
 
 <body>
     <header class="container">
-
         <div class="index-logo">
             <p class="logo">Casual Bag</p>
             <p class="logo-for-mobile">CB</p>
@@ -28,57 +27,58 @@
                 <p>Bag</p>
             </div>
         </div>
-
-
-        <nav>
+        <nav class="button-border">
+            <span class="switcher"></span>
             <span class="nav-icon"></span>
-            <ul class="nav-menu">
-                <li>
-                    <a class="nav-link" href="#">Women</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">Men</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">Handbags</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">Accessories</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">Sale</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">New Arrivals</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">Clearance</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">Store Locator</a>
-                </li>
-            </ul>
+            <span class="nav-icon-close dropdown-content"></span>
+            <div class="dropdown-content nav-menu">
+                <ul>
+                    <li>
+                        <a class="nav-link" href="#">Women</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Men</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Handbags</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Accessories</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Sale</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">New Arrivals</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Clearance</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Store Locator</a>
+                    </li>
+                </ul>
+                <div class="search-panel">
+                    <input type="search" id="search-field" placeholder="Style Name"><span class="search-icon"></span>
+                </div>
+            </div>
         </nav>
-        <div class="search-panel">
-            <input type="search">
-        </div>
-
     </header>
-    <section class="container promo-block">
+    <section class="promo-block">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="arrows">
-                    <button type="button" class="left-arrow"></button>
-                    <button type="button" class="right-arrow"></button>
+                    <button type="button" class="left-arrow arrow"></button>
+                    <button type="button" class="right-arrow arrow"></button>
                 </div>
                 <div class="swiper-slide">
-                    <img src="/img/1.jpg" alt="New collection">
+                    <img class="cover" src="/img/1.jpg" alt="New collection">
                 </div>
                 <div class="swiper-slide" hidden>
-                    <img src="/img/2.jpg" alt="Products info">
+                    <img class="cover" src="/img/2.jpg" alt="Products info">
                 </div>
                 <div class="swiper-slide" hidden>
-                    <img src="/img/3.jpg" alt="Discounts">
+                    <img class="cover" src="/img/3.jpg" alt="Discounts">
                 </div>
             </div>
             <div class="swiper-buttons">
@@ -105,20 +105,21 @@
     <section class="container new-arrivals">
         <h3>New arrivals</h3>
         <div id="holder"></div>
+
         <script type="text/template" id="ul-templ">
                 <ul>
                     <% for (let i = 0; i < 4; i++) { %>
-                        <li>
+                        <li id="<%-items[i].id%>">
                             <a href="#">
                                 <img src="/img/<%-items[i].title.replace(/ /g, "_")%>.png" alt="<%-items[i].title%>" width="240"  height="340">
-                                <span style="<%=items[i].hasNew ? '' : 'display: none'%>"></span>
+                                <span style="<%-items[i].hasNew ? '' : 'display: none'%>"></span>
                                 <span><%-items[i].title%></span>
                                 <span>£<%-items[i].discountedPrice%></span>
                             </a>
                         </li>
                     <% } %>
-              </ul>
-            </script>
+                </ul>
+        </script>
 
         <div class="button">
             <a href="#">All arrivals</a>
