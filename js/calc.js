@@ -9,6 +9,25 @@ let calculator = (function () {
 
 })();
 
+let headerTag = document.querySelector('header');
+let navPanel = headerTag.querySelector('nav');
+let dropdownButton = navPanel.querySelector('.switcher');
+let dropdownContent = navPanel.querySelector('.nav-menu');
+let openIcon = navPanel.querySelector('.nav-icon');
+let closeIcon = navPanel.querySelector('.nav-icon-close');
+
+function switchVisibility() {
+    headerTag.classList.toggle('push-content');
+    dropdownContent.classList.toggle('dropdown-content');
+    dropdownContent.classList.toggle('menu-border');
+    openIcon.classList.toggle('dropdown-content');
+    closeIcon.classList.toggle('dropdown-content');
+    navPanel.classList.toggle('button-border');
+}
+
+dropdownButton.addEventListener('click', switchVisibility);
+
+
 window.catalog.sort(compare);
 console.log(window.catalog);
 
