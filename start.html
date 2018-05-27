@@ -59,77 +59,101 @@
                     </li>
                 </ul>
                 <div class="search-panel">
-                    <input type="search" id="search-field" placeholder="Style Name"><span class="search-icon"></span>
+                    <input type="search" id="search-field" placeholder="Style Name">
+                    <span class="search-icon"></span>
                 </div>
             </div>
         </nav>
     </header>
     <section class="promo-block">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
+        <div class="slider-container">
+            <div class="slider-wrapper">
                 <div class="arrows">
                     <button type="button" class="left-arrow arrow"></button>
                     <button type="button" class="right-arrow arrow"></button>
                 </div>
-                <div class="swiper-slide">
-                    <img class="cover" src="/img/1.jpg" alt="New collection">
+                <div class="slides">
+                    <div>
+                        <picture>
+                            <source srcset="/img/1_mobile.jpg" media="(max-width: 767px)">
+                            <source srcset="/img/1.jpg" media="(min-width: 768px)">
+                            <img class="cover" src="/img/1.jpg" alt="New collection">
+                        </picture>
+                    </div>
+                    <div hidden>
+                        <picture>
+                            <source srcset="/img/2_mobile.jpg" media="(max-width: 767px)">
+                            <source srcset="/img/2.jpg" media="(min-width: 768px)">
+                            <img class="cover" src="/img/2.jpg" alt="Products info">
+                        </picture>
+                    </div>
+                    <div hidden>
+                        <picture>
+                            <source srcset="/img/3_mobile.jpg" media="(max-width: 767px)">
+                            <source srcset="/img/3.jpg" media="(min-width: 768px)">
+                            <img class="cover" src="/img/3.jpg" alt="Discounts">
+                        </picture>
+                    </div>
                 </div>
-                <div class="swiper-slide" hidden>
-                    <img class="cover" src="/img/2.jpg" alt="Products info">
-                </div>
-                <div class="swiper-slide" hidden>
-                    <img class="cover" src="/img/3.jpg" alt="Discounts">
-                </div>
-            </div>
-            <div class="swiper-buttons">
-                <input class="swiper-button" type="radio" id="first-slide">
-                <input class="swiper-button" type="radio" id="second-slide">
-                <input class="swiper-button" type="radio" id="third-slide">
             </div>
             <div class="controls">
-                <label for="first-slide"></label>
-                <label for="second-slide"></label>
-                <label for="third-slide"></label>
+                <label for="first-slide">
+                    <input class="slider-button" type="radio" id="first-slide" name="radio-btn" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label for="second-slide">
+                    <input class="slider-button" type="radio" id="second-slide" name="radio-btn">
+                    <span class="checkmark"></span>
+                </label>
+                <label for="third-slide">
+                    <input class="slider-button" type="radio" id="third-slide" name="radio-btn">
+                    <span class="checkmark"></span>
+                </label>
             </div>
         </div>
     </section>
-    <section class="container banners">
+    <section class="banners">
         <div class="left-banner">
-            <span>Nike Red</span>
+            <a href="#">
+                <picture>
+                    <source srcset="/img/Nike_Red_mobile.png" media="(max-width: 767px)">
+                    <source srcset="/img/Nike_Red_tablet.png" media="(max-width: 1023px)">
+                    <source srcset="/img/Nike_Red_desktop.png" media="(min-width: 1024x)">
+                    <img class="scale-img" src="/img/Nike_Red_desktop.png" alt="Nike Red">
+                </picture>
+            </a>
         </div>
         <div class="right-banner">
-            <span>Caps &#38; Hats</span>
-            <span>Sale -50%</span>
+            <a href="#"></a>
         </div>
     </section>
     <section class="container new-arrivals">
-        <h3>New arrivals</h3>
+        <h2>New arrivals</h2>
         <div id="holder"></div>
 
         <script type="text/template" id="ul-templ">
-                <ul>
+                <ul style="padding: 0">
                     <% for (let i = 0; i < 4; i++) { %>
                         <li id="<%-items[i].id%>">
-                            <a href="#">
-                                <img src="/img/<%-items[i].title.replace(/ /g, "_")%>.png" alt="<%-items[i].title%>" width="240"  height="340">
-                                <span style="<%-items[i].hasNew ? '' : 'display: none'%>"></span>
-                                <span><%-items[i].title%></span>
-                                <span>£<%-items[i].discountedPrice%></span>
-                            </a>
+                            <div class="item-wrapper">
+                                <a href="#">
+                                    <img class="item-img" src="/img/<%-items[i].title.replace(/ /g, "_")%>.png" alt="<%-items[i].title%>" width="240"  height="340">
+                                    <span class="new-label" style="<%-items[i].hasNew ? 'display: block' : 'display: none'%>">NEW</span>
+                                    <span class="item-title"><%-items[i].title%></span>
+                                    <span>£<%-items[i].discountedPrice%></span>
+                                </a>
+                            </div>
                         </li>
                     <% } %>
                 </ul>
         </script>
-
-        <div class="button">
-            <a href="#">All arrivals</a>
-        </div>
+        <a class="arrivals-btn" href="#">All arrivals</a>
     </section>
-    <footer class="container">
+    <footer>
         <div class="footer-left-side">
             <div class="footer-column">
                 <div class="footer-column-title">Quick Links</div>
-                <div class="footer-links">
+                <div class="footer-info">
                     <a href="#">Store locator</a>
                     <a href="#">Gift cards</a>
                     <a href="#">Size guide</a>
@@ -139,7 +163,7 @@
             </div>
             <div class="footer-column">
                 <div class="footer-column-title">Customer Care</div>
-                <div class="footer-links">
+                <div class="footer-info">
                     <a href="#">Customer service</a>
                     <a href="#">Track my order</a>
                     <a href="#">Return policy</a>
@@ -152,34 +176,45 @@
         <div class="footer-right-side">
             <div class="footer-column">
                 <div class="footer-column-title">Questions</div>
-                <div class="social-twitter">Tweet us @casual_bag</div>
+                <div class="social-twitter footer-info"><span class="sprite"></span>Tweet us
+                    <b>@casual_bag</b>
+                </div>
             </div>
             <div class="footer-column">
                 <div class="footer-column-title">Order by phone</div>
-                <div class="tel-number">8-800-409-47-12</div>
+                <div class="footer-info">8-800-409-47-12</div>
             </div>
             <div class="footer-under-column">
                 <div class="delivery-info">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</div>
                 <div class="social-block">
-                    <div class="facebook sprite"></div>
-                    <div class="twitter sprite"></div>
+                    <span class="facebook sprite"></span>
+                    <span class="twitter sprite"></span>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div>© 2010–2015, The Template Group inc.</div>
-            <div class="sharing">
-                <span>Share</span>
-                <span>1 437</span>
-            </div>
+        <div class="footer-bottom-right">
             <div>
                 <span>Legal notice</span>
                 <span>Privacy policy</span>
                 <span>Site map</span>
             </div>
+            <div class="social-block-mobile">
+                <span class="facebook sprite"></span>
+                <span class="twitter sprite"></span>
+            </div>
         </div>
+        <div class="footer-bottom-left">
+            <div>© 2010–2015, The Template Group inc.</div>
+            <div class="sharing">
+                <span>Share</span>
+                <span>1 437</span>
+            </div>
+        </div>
+
     </footer>
-    <script src="/script-compiled.js"></script>
+    <script src="/lib/menu.mobile.js"></script>
+    <script src="/lib/catalogFunctions.js"></script>
+    <script src="/lib/start.js"></script>
 </body>
 
 </html>
