@@ -16,7 +16,7 @@
     <header class="container">
         <div class="index-logo">
             <p class="logo">Casual Bag</p>
-            <p class="logo-for-mobile">CB</p>
+            <p class="mobile-logo">CB</p>
         </div>
         <div class="user-block">
             <div class="sign-up">
@@ -128,7 +128,7 @@
     </section>
     <section class="container new-arrivals">
         <h2>New arrivals</h2>
-        <div id="holder"></div>
+        <div id="arrivals-holder"></div>
 
         <script type="text/template" id="ul-templ">
                 <ul style="padding: 0">
@@ -138,7 +138,7 @@
                                 <a href="#">
                                     <div class="img-container">
                                         <img class="item-img" src="/img/<%-items[i].title.replace(/ /g, "_")%>.png" alt="<%-items[i].title%>" width="240"  height="340">
-                                        <div class="black-background"></div>
+                                        <div class="background-black"></div>
                                         <div>View item</div>
                                         <span class="new-label" style="<%-items[i].hasNew ? 'display: block' : 'display: none'%>">NEW</span>
                                     </div>

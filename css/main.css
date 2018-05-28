@@ -44,7 +44,7 @@ a:hover {
   color: #f14a58;
 }
 
-.container::after, #holder::after, #catalog-holder::after .footer-left-side::after, .footer-right-side::after {
+.container::after, #arrivals-holder::after, #catalog-holder::after .footer-left-side::after, .footer-right-side::after {
   content: "";
   display: table;
   clear: both;
@@ -185,7 +185,7 @@ ul {
   position: relative;
 }
 
-.black-background {
+.background-black {
   width: 100%;
   height: 100%;
   background-color: black;
@@ -195,7 +195,7 @@ ul {
   top: 0;
 }
 
-.black-background ~ div {
+.background-black ~ div {
   position: absolute;
   z-index: 3;
   top: 50%;
@@ -207,11 +207,11 @@ ul {
   margin-top: -0.625em;
 }
 
-.item-wrapper:hover .black-background {
+.item-wrapper:hover .background-black {
   opacity: 0.5;
 }
 
-.item-wrapper:hover .black-background ~ div  {
+.item-wrapper:hover .background-black ~ div  {
   opacity: 1;
 }
 
@@ -293,7 +293,7 @@ ul {
     display: none;
   }
 
-  .logo-for-mobile {
+  .mobile-logo {
     font-size: 24px; 
     font-weight: bold;
     margin: 0.9em 0 0.7em;
@@ -429,17 +429,17 @@ ul {
     text-align: center;
   }
 
-  #holder li, #catalog-holder li {
+  #arrivals-holder li, #catalog-holder li {
     float: left;
     width: 47%;
     margin-bottom: 72px;
   }
 
-  #holder li:nth-child(2) ~ li {
+  #arrivals-holder li:nth-child(2) ~ li {
     display: none;
   }
 
-  #holder li:nth-child(odd), #catalog-holder li:nth-child(odd) {
+  #arrivals-holder li:nth-child(odd), #catalog-holder li:nth-child(odd) {
     margin-right: 5vw;
   }
 

@@ -17,7 +17,7 @@
     <header class="container">
         <div class="index-logo">
             <p class="logo">Casual Bag</p>
-            <p class="logo-for-mobile">CB</p>
+            <p class="mobile-logo">CB</p>
         </div>
         <div class="user-block">
             <div class="sign-up">
@@ -136,25 +136,27 @@
         <script type="text/template" id="ul-templ">
             <ul style="padding: 0">
                 <% for (let i = 0; i < 12; i++) { %>
-                    <li id="<%-items[i].id%>" data-category="<%-items[i].category%>" data-fashion="<%-items[i].fashion%>" data-color="<%-items[i].colors%>" data-size="<%-items[i].sizes%>">
+                    <li id="<%-items[i].id%>" data-category="<%-items[i].category%>" data-fashion="<%-items[i].fashion%>" data-colors="<%-items[i].colors%>" data-sizes="<%-items[i].sizes%>">
                         <div class="item-wrapper">
                             <a href="#">
                                 <div class="img-container">
                                     <img class="item-img" src="/img/<%-items[i].title.replace(/ /g, "_")%>.png" alt="<%-items[i].title%>" width="240"  height="340">
-                                    <div class="black-background"></div>
+                                    <div class="background-black"></div>
                                     <div>View item</div>
                                     <span class="new-label" style="<%-items[i].hasNew ? 'display: block' : 'display: none'%>">NEW</span>
                                 </div>
                                 <span class="item-title"><%-items[i].title%></span>
-                                <% if (items[i].price != items[i].discountedPrice && items[i].price != null) { %>
-                                    <span class="full-price"><%-items[i].price%></span>
-                                    <span class="discount">-<%-100 - (items[i].discountedPrice * 100 / items[i].price)%>%</span>
-                                    <% } %>
                                 <% if (items[i].price == null && items[i].discountedPrice == null) { %>
                                     <span class="placeholder"><%-items[i].placeholder%></span>
-                                    <%} else {%>
+                                <%} else {%>
+                                    <% if (items[i].price != items[i].discountedPrice) { %>
+                                        <span class="full-price"><%-items[i].price%></span>
+                                        <span class="discount">-<%-100 - (items[i].discountedPrice * 100 / items[i].price)%>%</span>
                                         <span>£<%-items[i].discountedPrice%>
+                                    <%} else {%>
+                                    <span>£<%-items[i].discountedPrice%>
                                     <% } %></span>
+                                <% } %>
                             </a>
                         </div>
                     </li>
