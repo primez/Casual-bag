@@ -1,0 +1,41 @@
+#catalog-holder li {
+    margin-bottom: 0;
+}
+
+.item-wrapper {
+    text-align: center;
+}
+
+.item-wrapper .placeholder {
+    font: italic 16px 'Times New Roman';
+    color: #757575;
+}
+
+.full-price {
+    display: inline-block;
+    font: 14px 'Roboto';
+    color: #757575;
+}
+
+.discount {
+    display: inline-block;
+    font: 16px 'Times New Roman';
+    color: #757575;
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+
+    /*----------------------------------------------------catalog-items*/
+
+    .item-wrapper {
+        margin-bottom: 50px;
+    }
+
+    .item-wrapper .placeholder {
+        font-size: 14px;
+    }
+
+    .full-price {
+        font-size: 12px;
+    }
+}
