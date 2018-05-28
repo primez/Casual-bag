@@ -1,3 +1,8 @@
+/*----------------------------------------------------catalog-items*/
+.filters {
+    display: none;
+}
+
 #catalog-holder li {
     margin-bottom: 0;
 }
@@ -11,19 +16,65 @@
     color: #757575;
 }
 
-.full-price {
+.item-wrapper .discounted-price, .item-wrapper .full-price, .item-wrapper .discount {
     display: inline-block;
+}
+
+.item-wrapper .full-price {
     font: 14px 'Roboto';
     color: #757575;
 }
 
-.discount {
-    display: inline-block;
-    font: 16px 'Times New Roman';
+.item-wrapper .discount {
+    font: italic 16px 'Times New Roman';
     color: #757575;
+    padding-right: 13px;
 }
 
-@media screen and (min-width: 375px) and (max-width: 767px) {
+.catalog-items {
+    position: relative;
+    text-align: center;
+}
+
+.catalog-banner {
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+
+.catalog-banner p:nth-child(1){
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.6em;
+    white-space: normal;
+}
+
+.catalog-banner p:nth-child(1) span {
+    color: #f14a58;
+}
+
+.catalog-banner p:nth-child(2){
+    display: block;
+    font: italic 16px 'Times New Roman';
+    line-height: 1.8em;
+}
+
+/*----------------------------------------------------bottom-banner*/
+
+.bottom-banner {
+    overflow: scroll;
+    min-width: 375px;
+    display: block;
+}
+
+.bottom-banner img {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
 
     /*----------------------------------------------------catalog-items*/
 
@@ -35,7 +86,46 @@
         font-size: 14px;
     }
 
-    .full-price {
+    .item-wrapper .full-price {
         font-size: 12px;
+    }
+
+    .item-wrapper .discount {
+        font-size: 14px;
+    }
+
+    #catalog-holder li:nth-child(8) ~ li {
+        display: blo;
+      }
+
+    .catalog-banner {
+    left: 0;
+    top: 14%;
+    padding: 0 53px;
+    }
+
+    #catalog-holder li:nth-child(3), #catalog-holder li:nth-child(4) {
+        margin-top: 270px;
+    }
+
+    .catalog-banner p:nth-child(1){
+        font-size: 18px;
+    }
+
+    .catalog-banner p:nth-child(2){
+        font-size: 14px;
+    }
+
+    /*----------------------------------------------------bottom-banner*/
+
+    .bottom-banner img:nth-child(1) ~ img {
+        display: none;
+    }
+
+    .bottom-banner img:nth-child(1) {
+        display: block;
+        min-width: 375px !important;
+        max-width: 100%;
+        height: auto;
     }
 }

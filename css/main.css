@@ -44,17 +44,27 @@ a:hover {
   color: #f14a58;
 }
 
-.container::after, #arrivals-holder::after, #catalog-holder::after .footer-left-side::after, .footer-right-side::after {
+header, .container::after, #arrivals-holder::after, #catalog-holder::after, .footer-left-side::after, .footer-right-side::after {
   content: "";
   display: table;
   clear: both;
 }
+
+.container, .banners, footer, .filters, .bottom-banner {
+  min-width: 375px;
+  overflow-x: auto;
+}
+    
 
 /*----------------------------------------------------header */
 
 .index-logo {
   float: left;
   width: 25%;
+}
+
+.index-logo a:hover {
+  color: black;
 }
 
 .user-block {
@@ -174,7 +184,7 @@ ul {
   font-family: 'RobotoBold';
 }
 
-.arrivals-btn {
+.more-content-btn {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
@@ -277,8 +287,10 @@ ul {
 
 @media screen and (max-width: 767px) {
 
+  
+
 /*----------------------------------------------------header*/
-  .container {
+  header, .container {
     width: 100%;
     padding: 0 1.25rem;
     position: relative;
@@ -458,7 +470,7 @@ ul {
     margin-bottom: 1.4em;
   }
 
-  .arrivals-btn{
+  .more-content-btn{
     font-size: 18px;
     font-weight: bold;
     padding: 1em 3em;

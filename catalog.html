@@ -16,8 +16,8 @@
 <body>
     <header class="container">
         <div class="index-logo">
-            <p class="logo">Casual Bag</p>
-            <p class="mobile-logo">CB</p>
+            <a href="/start.html" class="logo"><p>Casual Bag</p></a>
+            <a href="/start.html" class="mobile-logo"><p>CB</p></a>
         </div>
         <div class="user-block">
             <div class="sign-up">
@@ -150,11 +150,11 @@
                                     <span class="placeholder"><%-items[i].placeholder%></span>
                                 <%} else {%>
                                     <% if (items[i].price != items[i].discountedPrice) { %>
-                                        <span class="full-price"><%-items[i].price%></span>
-                                        <span class="discount">-<%-100 - (items[i].discountedPrice * 100 / items[i].price)%>%</span>
-                                        <span>£<%-items[i].discountedPrice%>
+                                        <span class="full-price">£<%-items[i].price.toFixed(2)%></span>
+                                        <span class="discount">-<%-Math.round(100 - (items[i].discountedPrice * 100 / items[i].price))%>%</span>
+                                        <span class="discounted-price">£<%-items[i].discountedPrice.toFixed(2)%>
                                     <%} else {%>
-                                    <span>£<%-items[i].discountedPrice%>
+                                    <span>£<%-items[i].discountedPrice.toFixed(2)%>
                                     <% } %></span>
                                 <% } %>
                             </a>
@@ -163,8 +163,19 @@
                 <% } %>
             </ul>
         </script>
+        <div class="catalog-banner">
+            <p>Last weekend
+                <span>extra 50%</span> off on all reduced boots and shoulder bags</p>
+            <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at
+                11:59 GMT on March 1st 2015</p>
+        </div>
+        <a class="more-content-btn" href="#">Show more</a>
     </section>
-
+    <section class="bottom-banner">
+        <img src="/img/banner_adidas.jpg" alt="Adidas Blue For men" width="650" height="384">
+        <img src="/img/Repair Patches.jpg" alt="Repair Patches" width="324" height="384">
+        <img src="/img/bag.jpg" alt="bag" width="325" height="384">
+    </section>
 
 
     <footer>

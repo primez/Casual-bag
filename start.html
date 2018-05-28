@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <header class="container">
+    <header>
         <div class="index-logo">
-            <p class="logo">Casual Bag</p>
-            <p class="mobile-logo">CB</p>
+            <a class="logo"><p>Casual Bag</p></a>
+            <a class="mobile-logo"><p>CB</p></a>
         </div>
         <div class="user-block">
             <div class="sign-up">
@@ -33,7 +33,7 @@
             <div class="dropdown-content nav-menu">
                 <ul>
                     <li>
-                        <a class="nav-link" href="#">Women</a>
+                        <a class="nav-link" href="/catalog.html">Women</a>
                     </li>
                     <li>
                         <a class="nav-link" href="#">Men</a>
@@ -72,7 +72,7 @@
                     <button type="button" class="right-arrow arrow"></button>
                 </div>
                 <div class="slides">
-                    <div>
+                    <div id="first-slide">
                         <picture>
                             <source srcset="/img/1_mobile.jpg" media="(max-width: 767px)">
                             <source srcset="/img/1.jpg" media="(min-width: 768px)">
@@ -97,7 +97,7 @@
             </div>
             <div class="controls">
                 <label for="first-slide">
-                    <input class="slider-button" type="radio" id="first-slide" name="radio-btn" checked>
+                    <input class="slider-button" type="radio" id="first-slide" name="radio-btn" checked data-id="first-slide">
                     <span class="checkmark"></span>
                 </label>
                 <label for="second-slide">
@@ -143,14 +143,14 @@
                                         <span class="new-label" style="<%-items[i].hasNew ? 'display: block' : 'display: none'%>">NEW</span>
                                     </div>
                                     <span class="item-title"><%-items[i].title%></span>
-                                    <span>£<%-items[i].discountedPrice%></span>
+                                    <span>£<%-items[i].discountedPrice.toFixed(2)%></span>
                                 </a>
                             </div>
                         </li>
                     <% } %>
                 </ul>
         </script>
-        <a class="arrivals-btn" href="#">All arrivals</a>
+        <a class="more-content-btn" href="#">All arrivals</a>
     </section>
     <footer>
         <div class="footer-left-side">
