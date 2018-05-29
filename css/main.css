@@ -34,6 +34,11 @@ html {
   letter-spacing: 0.03em;
 }
 
+body {
+  min-height:100vh;
+  position:relative;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -44,13 +49,13 @@ a:hover {
   color: #f14a58;
 }
 
-header, .container::after, #arrivals-holder::after, #catalog-holder::after, .footer-left-side::after, .footer-right-side::after {
+header, .container::after, #arrivals-holder::after, #catalog-holder::after, footer-wrapper::after, .footer-left-side::after, .footer-right-side::after {
   content: "";
   display: table;
   clear: both;
 }
 
-.container, .banners, footer, .filters, .bottom-banner {
+.container, .banners, .filters, .bottom-banner {
   min-width: 375px;
   overflow-x: auto;
 }
@@ -184,7 +189,7 @@ ul {
   font-family: 'RobotoBold';
 }
 
-.more-content-btn {
+.general-btn {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
@@ -241,6 +246,16 @@ ul {
   padding-top: 6px;
 }
 /*----------------------------------------------------footer */
+
+footer {
+  position: relative; 
+}
+
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
 .footer-column-title {
   font-size: 16px;
@@ -308,7 +323,10 @@ ul {
   .mobile-logo {
     font-size: 24px; 
     font-weight: bold;
-    margin: 0.9em 0 0.7em;
+  }
+
+  .mobile-logo p {
+    margin: 0.8em 0;
   }
 
   .sign-up {
@@ -470,14 +488,17 @@ ul {
     margin-bottom: 1.4em;
   }
 
-  .more-content-btn{
+  .general-btn{
     font-size: 18px;
     font-weight: bold;
     padding: 1em 3em;
     margin-bottom: 5.5em;
   }
   /*----------------------------------------------------footer */
-
+  footer {
+    margin-top: 585px; 
+  }
+  
   .footer-left-side, .footer-right-side, .footer-bottom-right {
     width: 100%;
     padding: 0 1.25rem;

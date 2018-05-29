@@ -10,7 +10,7 @@
     <script src="/data/catalog.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/catalog.css">
+    <link rel="stylesheet" href="/css/shoppingBag.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
             <div class="dropdown-content nav-menu">
                 <ul>
                     <li>
-                        <a class="nav-link" href="#">Women</a>
+                        <a class="nav-link" href="/catalog.html">Women</a>
                     </li>
                     <li>
                         <a class="nav-link" href="#">Men</a>
@@ -69,119 +69,23 @@
             </div>
         </nav>
     </header>
-    <section class="filters">
-        <ul>
-            <li>
-                Fashion
-                <ul>
-                    <li>Not selected</li>
-                    <li>Nail the 90s</li>
-                    <li>Casual style</li>
-                    <li>New look</li>
-                    <li>Sport</li>
-                    <li>Vintage</li>
-                    <li>Classical style</li>
-                </ul>
-            </li>
-            <li>
-                Product type
-                <ul>
-                    <li>Not selected</li>
-                    <li>Coats &#38; Jackets</li>
-                    <li>Dresses</li>
-                    <li>Jersey Tops</li>
-                </ul>
-            </li>
-            <li>Color
-                <ul>
-                    <li>Not selected</li>
-                    <li>Black</li>
-                    <li>Blue</li>
-                    <li>Red</li>
-                    <li>Green</li>
-                    <li>Golden</li>
-                </ul>
-            </li>
-            <li>Brand
-                <ul>
-                    <li>Not selected</li>
-                    <li>Chi Chi London</li>
-                    <li>Antipodium</li>
-                    <li>Adidas</li>
-                    <li>New Balance</li>
-                    <li>River Island</li>
-                </ul>
-            </li>
-            <li>Size
-                <ul>
-                    <li>Not selected</li>
-                    <li>UK 2</li>
-                    <li>UK 18</li>
-                    <li>UK 18L</li>
-                    <li>UK 20</li>
-                    <li>UK 20L</li>
-                    <li>UK 20S</li>
-                    <li>UK 22S</li>
-                    <li>UK 22</li>
-                </ul>
-            </li>
-            <li>Price range
-                <ul>
-                    <li>Not selected</li>
-                    <li>To £99</li>
-                    <li>£100-£299</li>
-                    <li>From £399</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-    <section class="container catalog-items">
-        <div id="catalog-holder"></div>
-        <script type="text/template" id="ul-templ">
-            <ul style="padding: 0">
-                <% for (let i = 0; i < 12; i++) { %>
-                    <li id="<%-items[i].id%>" data-category="<%-items[i].category%>" data-fashion="<%-items[i].fashion%>" data-colors="<%-items[i].colors%>" data-sizes="<%-items[i].sizes%>">
-                        <div class="item-wrapper">
-                            <a href="#">
-                                <div class="img-container">
-                                    <img class="item-img" src="/img/<%-items[i].title.replace(/ /g, "_")%>.png" alt="<%-items[i].title%>" width="240"  height="340">
-                                    <div class="background-black"></div>
-                                    <div>View item</div>
-                                    <span class="new-label" style="<%-items[i].hasNew ? 'display: block' : 'display: none'%>">NEW</span>
-                                </div>
-                                <span class="item-title"><%-items[i].title%></span>
-                                <% if (items[i].price == null && items[i].discountedPrice == null) { %>
-                                    <span class="placeholder"><%-items[i].placeholder%></span>
-                                <%} else {%>
-                                    <% if (items[i].price != items[i].discountedPrice) { %>
-                                        <span class="full-price">£<%-items[i].price.toFixed(2)%></span>
-                                        <span class="discount">-<%-Math.round(100 - (items[i].discountedPrice * 100 / items[i].price))%>%</span>
-                                        <span class="discounted-price">£<%-items[i].discountedPrice.toFixed(2)%>
-                                    <%} else {%>
-                                    <span>£<%-items[i].discountedPrice.toFixed(2)%>
-                                    <% } %></span>
-                                <% } %>
-                            </a>
-                        </div>
-                    </li>
-                <% } %>
-            </ul>
-        </script>
-        <div class="catalog-banner">
-            <p>Last weekend
-                <span>extra 50%</span> off on all reduced boots and shoulder bags</p>
-            <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at
-                11:59 GMT on March 1st 2015</p>
+    <section class="bag-items">
+        <div class="container">
+            Shopping bag
         </div>
-        <a class="general-btn" href="#">Show more</a>
     </section>
-    <section class="bottom-banner">
-        <img src="/img/banner_adidas.jpg" alt="Adidas Blue For men" width="650" height="384">
-        <img src="/img/Repair Patches.jpg" alt="Repair Patches" width="324" height="384">
-        <img src="/img/bag.jpg" alt="bag" width="325" height="384">
+    <section class="bag-controls">
+        <div class="container message">You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code
+            <span>nexday</span> at checkout</div>
+        <div class="container">
+            <div class="empty-bag">Empty bag</div>
+            <div class="general-btn">Buy now</div>
+            <div class="total-price">
+                <div>Total Cost</div>
+                <div>£0.00</div>
+            </div>
+        </div>
     </section>
-
-
     <footer>
         <div class="footer-wrapper">
             <div class="footer-left-side">
@@ -249,9 +153,6 @@
         </div>
     </footer>
     <script src="/lib/menu.mobile.js"></script>
-    <script src="/lib/catalogFunctions.js"></script>
-    <script src="/lib/catalogTemplate.js"></script>
-    <script src="/lib/catalog.js"></script>
 </body>
 
 </html>
