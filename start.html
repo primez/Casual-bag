@@ -13,10 +13,14 @@
 </head>
 
 <body>
-    <header class="container">
+    <header>
         <div class="index-logo">
-            <p class="logo">Casual Bag</p>
-            <p class="mobile-logo">CB</p>
+            <a class="logo">
+                <p>Casual Bag</p>
+            </a>
+            <a class="mobile-logo">
+                <p>CB</p>
+            </a>
         </div>
         <div class="user-block">
             <div class="sign-up">
@@ -33,7 +37,7 @@
             <div class="dropdown-content nav-menu">
                 <ul>
                     <li>
-                        <a class="nav-link" href="#">Women</a>
+                        <a class="nav-link" href="/catalog.html">Women</a>
                     </li>
                     <li>
                         <a class="nav-link" href="#">Men</a>
@@ -72,21 +76,21 @@
                     <button type="button" class="right-arrow arrow"></button>
                 </div>
                 <div class="slides">
-                    <div>
+                    <div id="first-slide">
                         <picture>
                             <source srcset="/img/1_mobile.jpg" media="(max-width: 767px)">
                             <source srcset="/img/1.jpg" media="(min-width: 768px)">
                             <img class="cover" src="/img/1.jpg" alt="New collection">
                         </picture>
                     </div>
-                    <div hidden>
+                    <div id="second-slide" hidden>
                         <picture>
                             <source srcset="/img/2_mobile.jpg" media="(max-width: 767px)">
                             <source srcset="/img/2.jpg" media="(min-width: 768px)">
                             <img class="cover" src="/img/2.jpg" alt="Products info">
                         </picture>
                     </div>
-                    <div hidden>
+                    <div id="third-slide" hidden>
                         <picture>
                             <source srcset="/img/3_mobile.jpg" media="(max-width: 767px)">
                             <source srcset="/img/3.jpg" media="(min-width: 768px)">
@@ -96,16 +100,16 @@
                 </div>
             </div>
             <div class="controls">
-                <label for="first-slide">
-                    <input class="slider-button" type="radio" id="first-slide" name="radio-btn" checked>
+                <label for="first-slide-btn">
+                    <input class="slider-button" type="radio" id="first-slide-btn" name="radio-btn" checked data-id="first-slide">
                     <span class="checkmark"></span>
                 </label>
-                <label for="second-slide">
-                    <input class="slider-button" type="radio" id="second-slide" name="radio-btn">
+                <label for="second-slide-btn">
+                    <input class="slider-button" type="radio" id="second-slide-btn" name="radio-btn" data-id="second-slide">
                     <span class="checkmark"></span>
                 </label>
-                <label for="third-slide">
-                    <input class="slider-button" type="radio" id="third-slide" name="radio-btn">
+                <label for="third-slide-btn">
+                    <input class="slider-button" type="radio" id="third-slide-btn" name="radio-btn" data-id="third-slide">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -143,78 +147,80 @@
                                         <span class="new-label" style="<%-items[i].hasNew ? 'display: block' : 'display: none'%>">NEW</span>
                                     </div>
                                     <span class="item-title"><%-items[i].title%></span>
-                                    <span>£<%-items[i].discountedPrice%></span>
+                                    <span>£<%-items[i].discountedPrice.toFixed(2)%></span>
                                 </a>
                             </div>
                         </li>
                     <% } %>
                 </ul>
         </script>
-        <a class="arrivals-btn" href="#">All arrivals</a>
+        <a class="general-btn" href="#">All arrivals</a>
     </section>
     <footer>
-        <div class="footer-left-side">
-            <div class="footer-column">
-                <div class="footer-column-title">Quick Links</div>
-                <div class="footer-info">
-                    <a href="#">Store locator</a>
-                    <a href="#">Gift cards</a>
-                    <a href="#">Size guide</a>
-                    <a href="#">About us</a>
-                    <a href="#">Support</a>
+        <div class="footer-wrapper">
+            <div class="footer-left-side">
+                <div class="footer-column">
+                    <div class="footer-column-title">Quick Links</div>
+                    <div class="footer-info">
+                        <a href="#">Store locator</a>
+                        <a href="#">Gift cards</a>
+                        <a href="#">Size guide</a>
+                        <a href="#">About us</a>
+                        <a href="#">Support</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-column-title">Customer Care</div>
+                    <div class="footer-info">
+                        <a href="#">Customer service</a>
+                        <a href="#">Track my order</a>
+                        <a href="#">Return policy</a>
+                        <a href="#">Shipping &#38; delivery</a>
+                        <a href="#">Contact us</a>
+                        <a href="#">Careers</a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-column">
-                <div class="footer-column-title">Customer Care</div>
-                <div class="footer-info">
-                    <a href="#">Customer service</a>
-                    <a href="#">Track my order</a>
-                    <a href="#">Return policy</a>
-                    <a href="#">Shipping &#38; delivery</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Careers</a>
+            <div class="footer-right-side">
+                <div class="footer-column">
+                    <div class="footer-column-title">Questions</div>
+                    <div class="social-twitter footer-info">
+                        <span class="sprite"></span>Tweet us
+                        <b>@casual_bag</b>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-column-title">Order by phone</div>
+                    <div class="footer-info">8-800-409-47-12</div>
+                </div>
+                <div class="footer-under-column">
+                    <div class="delivery-info">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</div>
+                    <div class="social-block">
+                        <span class="facebook sprite"></span>
+                        <span class="twitter sprite"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-right-side">
-            <div class="footer-column">
-                <div class="footer-column-title">Questions</div>
-                <div class="social-twitter footer-info">
-                    <span class="sprite"></span>Tweet us
-                    <b>@casual_bag</b>
+            <div class="footer-bottom-right">
+                <div>
+                    <span>Legal notice</span>
+                    <span>Privacy policy</span>
+                    <span>Site map</span>
                 </div>
-            </div>
-            <div class="footer-column">
-                <div class="footer-column-title">Order by phone</div>
-                <div class="footer-info">8-800-409-47-12</div>
-            </div>
-            <div class="footer-under-column">
-                <div class="delivery-info">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</div>
-                <div class="social-block">
+                <div class="social-block-mobile">
                     <span class="facebook sprite"></span>
                     <span class="twitter sprite"></span>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom-right">
-            <div>
-                <span>Legal notice</span>
-                <span>Privacy policy</span>
-                <span>Site map</span>
+            <div class="footer-bottom-left">
+                <div>© 2010–2015, The Template Group inc.</div>
+                <div class="sharing">
+                    <span>Share</span>
+                    <span>1 437</span>
+                </div>
             </div>
-            <div class="social-block-mobile">
-                <span class="facebook sprite"></span>
-                <span class="twitter sprite"></span>
-            </div>
-        </div>
-        <div class="footer-bottom-left">
-            <div>© 2010–2015, The Template Group inc.</div>
-            <div class="sharing">
-                <span>Share</span>
-                <span>1 437</span>
-            </div>
-        </div>
 
+        </div>
     </footer>
     <script src="/lib/menu.mobile.js"></script>
     <script src="/lib/slider.js"></script>
