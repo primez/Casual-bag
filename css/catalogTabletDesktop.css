@@ -1,0 +1,72 @@
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /*----------------------------------------------------catalog-items*/
+    #catalog-holder ul {
+        margin-top: 2.4rem; 
+        margin-bottom: 0; 
+    }
+
+    #catalog-holder ul li {
+        height: 400px; 
+    }
+
+    .catalog-banner {
+        left: 0;
+        top: 19%;
+        padding: 0 5.6rem;
+        }
+
+    .catalog-banner p:nth-child(1){
+        font-size: 20px;
+    }
+
+    #catalog-holder li:nth-child(4), #catalog-holder li:nth-child(5), #catalog-holder li:nth-child(6) {
+        margin-top: 270px;
+    }
+
+    .catalog-items .general-btn{
+        padding: 1.2em 3.2em;
+    }
+
+    .bottom-banner {
+        width: 100%;
+        min-width: 375px !important;
+        height: auto;
+    }
+
+    .bottom-banner::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .bottom-banner div:nth-child(3) {
+        display: none;
+    }
+
+    .bottom-banner div {
+        float: left;
+        height: 32vw;
+        display: block;
+    }
+
+    .bottom-banner div:nth-child(1) {
+        width: 65vw;
+    }
+
+    .bottom-banner div:nth-child(2) {
+        width: 35vw;
+    }
+
+    .bottom-banner div img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+
+
+
+    
+
+
+}

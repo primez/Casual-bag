@@ -11,63 +11,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/shoppingBag.css">
+    <link rel="stylesheet" href="/css/mainTabletDesktop.css">
+    <link rel="stylesheet" href="/css/shoppingBagTabletDesktop.css">
 </head>
 
 <body>
-    <header class="container">
-        <div class="index-logo">
-            <a href="/start.html" class="logo">
-                <p>Casual Bag</p>
-            </a>
-            <a href="/start.html" class="mobile-logo">
-                <p>CB</p>
-            </a>
-        </div>
-        <div class="user-block">
-            <div class="sign-up">
-                <a href="#">E-mail sing up</a>
-            </div>
-            <div class="cart-info">
-                <p>Bag</p>
-            </div>
-        </div>
-        <nav class="button-border">
-            <span class="switcher"></span>
-            <span class="nav-icon"></span>
-            <span class="nav-icon-close dropdown-content"></span>
-            <div class="dropdown-content nav-menu">
-                <ul>
-                    <li>
-                        <a class="nav-link" href="/catalog.html">Women</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Men</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Handbags</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Accessories</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Sale</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">New Arrivals</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Clearance</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Store Locator</a>
-                    </li>
-                </ul>
-                <div class="search-panel">
-                    <input type="search" id="search-field" placeholder="Style Name">
-                    <span class="search-icon"></span>
+    <header>
+        <div>
+            <div class="top-row">
+                <div class="index-logo">
+                    <a href="/start.html" class="logo">
+                        <p>Casual Bag</p>
+                    </a>
+                    <a href="/start.html" class="mobile-logo">
+                        <p>CB</p>
+                    </a>
+                </div>
+                <div class="user-block">
+                    <div class="sign-up">
+                        <a href="#">E-mail sing up</a>
+                    </div>
+                    <div class="cart-info">
+                        <a>Bag</a>
+                    </div>
                 </div>
             </div>
-        </nav>
+            <nav class="button-border">
+                <span class="switcher"></span>
+                <span class="nav-icon"></span>
+                <span class="nav-icon-close dropdown-content"></span>
+                <div class="dropdown-content nav-menu">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="/catalog.html">Women</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Men</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Handbags</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Accessories</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Sale</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">New Arrivals</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Clearance</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Store Locator</a>
+                        </li>
+                    </ul>
+                    <div class="search-panel">
+                        <input class="collapsed" type="search" id="search-field" placeholder="Style Name">
+                        <span class="collapsed gradient-white"></span>
+                        <span class="search-icon"></span>
+                    </div>
+                </div>
+            </nav>
     </header>
     <section class="bag-items">
         <div class="container">
@@ -88,71 +94,76 @@
     </section>
     <footer>
         <div class="footer-wrapper">
-            <div class="footer-left-side">
-                <div class="footer-column">
-                    <div class="footer-column-title">Quick Links</div>
-                    <div class="footer-info">
-                        <a href="#">Store locator</a>
-                        <a href="#">Gift cards</a>
-                        <a href="#">Size guide</a>
-                        <a href="#">About us</a>
-                        <a href="#">Support</a>
+            <div class="footer-top">
+                <div class="footer-left-side">
+                    <div class="footer-column">
+                        <div class="footer-column-title">Quick Links</div>
+                        <div class="footer-info">
+                            <a href="#">Store locator</a>
+                            <a href="#">Gift cards</a>
+                            <a href="#">Size guide</a>
+                            <a href="#">About us</a>
+                            <a href="#">Support</a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title">Customer Care</div>
+                        <div class="footer-info">
+                            <a href="#">Customer service</a>
+                            <a href="#">Track my order</a>
+                            <a href="#">Return policy</a>
+                            <a href="#">Shipping &#38; delivery</a>
+                            <a href="#">Contact us</a>
+                            <a href="#">Careers</a>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <div class="footer-column-title">Customer Care</div>
-                    <div class="footer-info">
-                        <a href="#">Customer service</a>
-                        <a href="#">Track my order</a>
-                        <a href="#">Return policy</a>
-                        <a href="#">Shipping &#38; delivery</a>
-                        <a href="#">Contact us</a>
-                        <a href="#">Careers</a>
+                <div class="footer-right-side">
+                    <div class="footer-column">
+                        <div class="footer-column-title">Questions</div>
+                        <div class="social-twitter footer-info">
+                            <span class="sprite"></span>Tweet us
+                            <b>@casual_bag</b>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title">Order by phone</div>
+                        <div class="footer-info">8-800-409-47-12</div>
+                    </div>
+                    <div class="footer-under-column">
+                        <div class="delivery-info">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5
+                            days.
+                        </div>
+                        <div class="social-block">
+                            <span class="facebook sprite"></span>
+                            <span class="twitter sprite"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-right-side">
-                <div class="footer-column">
-                    <div class="footer-column-title">Questions</div>
-                    <div class="social-twitter footer-info">
-                        <span class="sprite"></span>Tweet us
-                        <b>@casual_bag</b>
+            <div class="footer-bottom">
+                <div class="footer-bottom-right">
+                    <div>
+                        <span>Legal notice</span>
+                        <span>Privacy policy</span>
+                        <span>Site map</span>
                     </div>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-column-title">Order by phone</div>
-                    <div class="footer-info">8-800-409-47-12</div>
-                </div>
-                <div class="footer-under-column">
-                    <div class="delivery-info">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</div>
-                    <div class="social-block">
+                    <div class="social-block-mobile">
                         <span class="facebook sprite"></span>
                         <span class="twitter sprite"></span>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom-right">
-                <div>
-                    <span>Legal notice</span>
-                    <span>Privacy policy</span>
-                    <span>Site map</span>
-                </div>
-                <div class="social-block-mobile">
-                    <span class="facebook sprite"></span>
-                    <span class="twitter sprite"></span>
+                <div class="footer-bottom-left">
+                    <div>© 2010–2015, The Template Group inc.</div>
+                    <div class="sharing">
+                        <span>Share</span>
+                        <span>1 437</span>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom-left">
-                <div>© 2010–2015, The Template Group inc.</div>
-                <div class="sharing">
-                    <span>Share</span>
-                    <span>1 437</span>
-                </div>
-            </div>
-
         </div>
     </footer>
-    <script src="/lib/menu.mobile.js"></script>
+    <script src="/lib/menuFunctions.js"></script>
 </body>
 
 </html>

@@ -95,8 +95,8 @@
     }
 
     #catalog-holder li:nth-child(8) ~ li {
-        display: blo;
-      }
+        display: none;
+    }
 
     .catalog-banner {
     left: 0;
@@ -118,11 +118,11 @@
 
     /*----------------------------------------------------bottom-banner*/
 
-    .bottom-banner img:nth-child(1) ~ img {
+    .bottom-banner div:nth-child(1) ~ div {
         display: none;
     }
 
-    .bottom-banner img:nth-child(1) {
+    .bottom-banner div:nth-child(1) {
         display: block;
         min-width: 375px !important;
         max-width: 100%;
