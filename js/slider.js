@@ -19,11 +19,14 @@
 
     arrowLeft.onclick = function () {
         changeSlideByArrow(--currentSlideIndex);
-    }
+    };
 
     arrowRight.onclick = function () {
         changeSlideByArrow(++currentSlideIndex);
-    }
+    };
+
+
+    setSlideTimeout();
 
     function changeSlideByButton() {
         let slideId = this.dataset.id;
@@ -47,21 +50,21 @@
         let slideToDisplay = slides[currentSlideIndex];
 
         displayOneSlide(slideToDisplay);
-        checkOneButton(currentSlideIndex);     
-        
+        checkOneButton(currentSlideIndex);
+
         setSlideTimeout();
     }
 
     function setSlideTimeout() {
         clearTimeout(timeoutId);
-        timeoutId = setTimeout(function() {
+        timeoutId = setTimeout(function () {
             changeSlideByArrow(++currentSlideIndex);
         }, 10000);
     }
 
     function updateCurrentIndex(slideToDisplay) {
         for (let i = 0; i < slides.length; i++) {
-            if(slides[i].id === slideToDisplay.id) {
+            if (slides[i].id === slideToDisplay.id) {
                 currentSlideIndex = i;
                 return;
             }
@@ -72,7 +75,7 @@
         slides.forEach(function (slide) {
             slide.hidden = true;
         });
-
+        slideToDisplay.style.opacity = "0";
         slideToDisplay.hidden = false;
     }
 

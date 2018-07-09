@@ -27,6 +27,8 @@
         changeSlideByArrow(++currentSlideIndex);
     };
 
+    setSlideTimeout();
+
     function changeSlideByButton() {
         var slideId = this.dataset.id;
         var slideToDisplay = sliderContainer.querySelector('#' + slideId);

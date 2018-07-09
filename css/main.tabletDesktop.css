@@ -266,7 +266,7 @@
   }
 
   .nav-menu li {
-    display: inline-block;
+    float: left;
     padding-right: 1.9em; 
     padding-top: 1.7em; 
     padding-bottom: 1.5em; 
@@ -279,8 +279,8 @@
   }
 
   .search-panel {
-    display: inline-block;
-    margin-left: 2.3vw;
+    float: right;
+    margin-top: 1.2em; 
     position: relative;
     width: 118px;
     height: 27px;
@@ -288,6 +288,11 @@
 
   .search-panel #search-field {
     width: 118px;
+    
+  }
+
+  .search-panel #search-field:blur {
+    visibility: hidden;
   }
 
   .search-icon {

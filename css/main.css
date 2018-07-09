@@ -49,13 +49,13 @@ a:hover {
   color: #f14a58;
 }
 
-.top-row::after, .container::after, #arrivals-holder::after, #catalog-holder ul::after, footer-wrapper::after, .footer-left-side::after, .footer-right-side::after {
+.clearfix::after {
   content: "";
   display: table;
   clear: both;
 }
 
-.container, .banners, .filters, .bottom-banner {
+.container, .banners, .bottom-banner {
   min-width: 375px;
   overflow-x: auto;
 }
@@ -194,6 +194,11 @@ ul {
   margin-right: auto;
 }
 
+.animated {
+  transition-property: opacity;
+  transition-duration: 8s;
+}
+
 .cover {
   width: 100%;
   object-fit: cover;
@@ -238,12 +243,38 @@ ul {
 }
 
 .item-img  {
-  width: 100%;
+  width: 212px;
   height: auto; 
+  position: relative;
 }
 
 .item-wrapper, .img-container {
   position: relative;
+}
+/*----------------------------------------------------------------------------------------task */
+.img-container:hover::before {
+  content:"";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: .5s ease;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.img-container:hover::after {
+  content:"View item";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 45%;
+  left: calc((100% - 104px) / 2);
+  font-size: 22px;
+  color: #f14a58;
+  font-weight: bold;
 }
 
 .background-black {
@@ -268,13 +299,9 @@ ul {
   margin-top: -0.625em;
 }
 
-.item-wrapper:hover .background-black {
-  opacity: 0.5;
-}
 
-.item-wrapper:hover .background-black ~ div  {
-  opacity: 1;
-}
+
+
 
 .item-wrapper:hover .item-title ~ span {
   color: black;
