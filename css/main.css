@@ -34,6 +34,11 @@ html {
   letter-spacing: 0.03em;
 }
 
+body {
+  min-height:100%;
+  position:relative;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -44,28 +49,66 @@ a:hover {
   color: #f14a58;
 }
 
-.container::after, #arrivals-holder::after, #catalog-holder::after .footer-left-side::after, .footer-right-side::after {
+.clearfix::after {
   content: "";
   display: table;
   clear: both;
 }
 
+.container, .banners, .bottom-banner {
+  min-width: 375px;
+  overflow-x: auto;
+}
+    
+
 /*----------------------------------------------------header */
 
+header, .container {
+  width: 100%;
+  padding: 0 3.75rem;
+  position: relative;
+}
+
+header {
+  min-height: 120px;
+  border-bottom: 1px solid #e5e5e5;
+}
+  
 .index-logo {
   float: left;
   width: 25%;
 }
 
+.index-logo a:hover {
+  color: black;
+}
+
+.mobile-logo {
+  display: none;
+}
+
+.logo {
+  font-size: 30px; 
+  font-weight: bold;
+}
+
+.logo p {
+  margin: 0;
+}
+
 .user-block {
   float: right;
-  width: 25%;
+  width: 30%;
+  text-align: right;
+  margin-right: 4.6rem;
 }
 
 .sign-up, .cart-info {
   display: inline-block;
   vertical-align: top;
   position: relative;
+  font: 12px 'Roboto';
+  margin-top: 1.1em;
 }
 
 .cart-info::before {
@@ -75,8 +118,8 @@ a:hover {
   background-image: url(/img/icons.png);
   background-position: -65px 0;
   position: absolute;
-  bottom: 1.6em;
-  right: 2.2em;
+  bottom: 0.3em;
+  right: 3.2em;
 }
 
 ul {
@@ -151,6 +194,11 @@ ul {
   margin-right: auto;
 }
 
+.animated {
+  transition-property: opacity;
+  transition-duration: 8s;
+}
+
 .cover {
   width: 100%;
   object-fit: cover;
@@ -170,19 +218,63 @@ ul {
   text-align: center;
 }
 
+.item-wrapper span{
+  display: block;
+  font: 14px 'Roboto';
+}
+
 .item-wrapper .item-title{
   font-family: 'RobotoBold';
 }
 
-.arrivals-btn {
+.general-btn {
+  font-size: 24px;
+  font-weight: bold;
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
   border: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+
+.general-btn:hover {
+  color: #f14a58;
+  border: 1px solid #f14a58;
+}
+
+.item-img  {
+  width: 212px;
+  height: auto; 
+  position: relative;
 }
 
 .item-wrapper, .img-container {
   position: relative;
+}
+/*----------------------------------------------------------------------------------------task */
+.img-container:hover::before {
+  content:"";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: .5s ease;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.img-container:hover::after {
+  content:"View item";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 45%;
+  left: calc((100% - 104px) / 2);
+  font-size: 22px;
+  color: #f14a58;
+  font-weight: bold;
 }
 
 .background-black {
@@ -207,13 +299,9 @@ ul {
   margin-top: -0.625em;
 }
 
-.item-wrapper:hover .background-black {
-  opacity: 0.5;
-}
 
-.item-wrapper:hover .background-black ~ div  {
-  opacity: 1;
-}
+
+
 
 .item-wrapper:hover .item-title ~ span {
   color: black;
@@ -232,6 +320,16 @@ ul {
 }
 /*----------------------------------------------------footer */
 
+footer {
+  position: relative; 
+}
+
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .footer-column-title {
   font-size: 16px;
   font-weight: bold;
@@ -249,10 +347,18 @@ ul {
 .sharing span:nth-child(1){
   font: 18px 'Open Sans';
   font-weight: bold;
+  display: inline-block;
 }
 
 .sharing span:nth-child(2){
   font: 12px 'Roboto';
+  display: inline-block;
+  width: 40px;
+  height: 19px;
+  background-image: url(/img/icons.png);
+  background-position: -125px 0;
+  text-align: center;
+  padding: 3px 0;
 }
 
 .footer-bottom-right span {
@@ -263,6 +369,7 @@ ul {
   display: inline-block;
   vertical-align: top;
   content: "";
+  background-image: url(/img/icons.png);
 }
 
 .social-twitter span {
@@ -273,15 +380,25 @@ ul {
   margin-right: 6px;
 }
 
+.facebook {
+  width: 8px;
+  height: 14px;
+  background-position: -19px 0;
+  margin-right: 25px;
+}
 
+.twitter {
+  width: 15px;
+  height: 11px;
+  background-position: -30px -2px;
+  margin-right: 0;
+}
 
 @media screen and (max-width: 767px) {
 
 /*----------------------------------------------------header*/
-  .container {
-    width: 100%;
+  header, .container {
     padding: 0 1.25rem;
-    position: relative;
   }
 
   header {
@@ -294,18 +411,21 @@ ul {
   }
 
   .mobile-logo {
+    display: block;
     font-size: 24px; 
     font-weight: bold;
-    margin: 0.9em 0 0.7em;
+  }
+
+  .mobile-logo p {
+    margin: 0.8em 0;
   }
 
   .sign-up {
     display: none;
   }
 
-  .cart-info p{
-    font: 12px 'Roboto';
-    margin: 2em 0;
+  .cart-info {
+    margin: 2.2em 0;
   }
 
   nav {
@@ -426,7 +546,6 @@ ul {
   h2 {
     font-size: 26px;
     margin: 2.3em auto;
-    text-align: center;
   }
 
   #arrivals-holder li, #catalog-holder li {
@@ -447,25 +566,23 @@ ul {
     display: block;
     font: 12px 'Roboto';
   }
-
-  .item-img  {
-    width: 100%;
-    height: auto; 
-  }
   
   .item-title {
     margin-top: 2.6em;
     margin-bottom: 1.4em;
   }
 
-  .arrivals-btn{
+  .general-btn{
     font-size: 18px;
     font-weight: bold;
     padding: 1em 3em;
     margin-bottom: 5.5em;
   }
   /*----------------------------------------------------footer */
-
+  footer {
+    margin-top: 585px; 
+  }
+  
   .footer-left-side, .footer-right-side, .footer-bottom-right {
     width: 100%;
     padding: 0 1.25rem;
@@ -539,20 +656,12 @@ ul {
 
   .sharing span:nth-child(1){
     font-size: 14px;
-    display: inline-block;
     margin-right: 6px;
   }
   
   .sharing span:nth-child(2){
-    vertical-align: top;
-    display: inline-block;
-    width: 40px;
-    height: 19px;
-    background-image: url(/img/icons.png);
-    background-position: -125px 0;
-    text-align: center;
-    padding: 3px 0;
     font-size: 10px;
+    vertical-align: top;
   }
 
   .footer-bottom-right div {

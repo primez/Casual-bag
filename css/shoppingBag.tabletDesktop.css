@@ -1,0 +1,70 @@
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /*----------------------------------------------------bag-items*/
+    .bag-items div:nth-child(1) {
+        font-size: 20px;
+        padding: 1.1em 2em;
+    }
+
+    /*----------------------------------------------------bag-controls*/
+    .message {
+        font-size: 11px;
+        padding: 1.2em 3.9em;
+        margin-bottom: 2.1em;
+    }
+
+    .bag-controls div:nth-child(2) .empty-bag {
+        margin-left: 0;
+    }
+
+    .bag-controls .total-price div:nth-child(2) {
+        font-size: 16px;
+    }
+    
+    .bag-controls div:nth-child(2) > div {
+        margin-right: 9.3rem; 
+    }
+
+    .bag-controls div:nth-child(2) .total-price {
+        margin-right: 0; 
+    }
+
+    .bag-controls .general-btn {
+        padding: 1.3em 4.2em;
+        margin-bottom: 3em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /*----------------------------------------------------bag-items*/
+    .bag-items div:nth-child(1) {
+        padding: 0.7em 3.75rem;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    /*----------------------------------------------------bag-controls*/
+    .message {
+        margin-bottom: 2.1em;
+    }
+
+    .bag-controls {
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    .bag-controls div:nth-child(2) .empty-bag {
+        margin-left: 0;
+    }
+    
+    .bag-controls div:nth-child(2) > div {
+        margin-right: 13.9rem; 
+    }
+
+    .bag-controls div:nth-child(2) .total-price {
+        margin-right: 0; 
+    }
+
+    .bag-controls .general-btn {
+        padding: 1em 4.6em;
+        margin-bottom: 2.5em;
+    }
+}

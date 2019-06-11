@@ -14,3 +14,15 @@
         navPanel.classList.toggle('button-border');
     });
 })();
+
+(function () {
+    let searchPanel = document.querySelector('.search-panel');
+    let search = searchPanel.querySelector('#search-field');
+    let backgroundWhite = searchPanel.querySelector('.gradient-white');
+    let magnifier = searchPanel.querySelector('.search-icon');
+
+    magnifier.addEventListener('click', function () {
+        search.classList.toggle('collapsed');
+        backgroundWhite.classList.toggle('collapsed');
+    });
+})();

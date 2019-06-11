@@ -10,18 +10,20 @@
     <script src="/data/catalog.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/shoppingBag.css">
     <link rel="stylesheet" href="/css/main.tabletDesktop.css">
+    <link rel="stylesheet" href="/css/shoppingBag.tabletDesktop.css">
 </head>
 
 <body>
     <header>
         <div>
-            <div class="top-row clearfix">
+            <div class="clearfix top-row">
                 <div class="index-logo">
-                    <a class="logo">
+                    <a href="/start.html" class="logo">
                         <p>Casual Bag</p>
                     </a>
-                    <a class="mobile-logo">
+                    <a href="/start.html" class="mobile-logo">
                         <p>CB</p>
                     </a>
                 </div>
@@ -30,7 +32,7 @@
                         <a href="#">E-mail sing up</a>
                     </div>
                     <div class="cart-info">
-                        <a href="/shopping-bag.html">Bag</a>
+                        <a>Bag</a>
                     </div>
                 </div>
             </div>
@@ -73,102 +75,22 @@
                 </div>
             </nav>
     </header>
-    <section class="promo-block">
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <div class="arrows">
-                    <button type="button" class="left-arrow arrow"></button>
-                    <button type="button" class="right-arrow arrow"></button>
-                </div>
-                <div class="slides">
-                    <div class="animated" id="first-slide">
-                        <picture>
-                            <source srcset="/img/1_mobile.jpg" media="(max-width: 767px)">
-                            <source srcset="/img/1_tablet.jpg" media="(min-width: 768px)">
-                            <source srcset="/img/1.jpg" media="(min-width: 1024px)">
-                            <img class="cover" src="/img/1.jpg" alt="New collection">
-                        </picture>
-                    </div>
-                    <div class="animated" id="second-slide" hidden>
-                        <picture>
-                            <source srcset="/img/2_mobile.jpg" media="(max-width: 767px)">
-                            <source srcset="/img/2_tablet.jpg" media="(min-width: 768px)">
-                            <source srcset="/img/2.jpg" media="(min-width: 1024px)">
-                            <img class="cover" src="/img/2.jpg" alt="Products info">
-                        </pictur>
-                    </div>
-                    <div class="animated" id="third-slide" hidden>
-                        <picture>
-                            <source srcset="/img/3_mobile.jpg" media="(max-width: 767px)">
-                            <source srcset="/img/3_tablet.jpg" media="(min-width: 768px)">
-                            <source srcset="/img/3.jpg" media="(min-width: 1024px)">
-                            <img class="cover" src="/img/3.jpg" alt="Discounts">
-                        </picture>
-                    </div>
-                </div>
-            </div>
-            <div class="controls">
-                <label for="first-slide-btn">
-                    <input class="slider-button" type="radio" id="first-slide-btn" name="radio-btn" checked data-id="first-slide">
-                    <span class="checkmark"></span>
-                </label>
-                <label for="second-slide-btn">
-                    <input class="slider-button" type="radio" id="second-slide-btn" name="radio-btn" data-id="second-slide">
-                    <span class="checkmark"></span>
-                </label>
-                <label for="third-slide-btn">
-                    <input class="slider-button" type="radio" id="third-slide-btn" name="radio-btn" data-id="third-slide">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
+    <section class="bag-items">
+        <div class="clearfix container">
+            Shopping bag
         </div>
     </section>
-    <section class="banners">
-        <div class="left-banner">
-            <a href="#">
-                <picture>
-                    <source srcset="/img/Nike_Red_mobile.jpg" media="(max-width: 767px)">
-                    <source srcset="/img/Nike_Red_tablet.jpg" media="(max-width: 1023px)">
-                    <source srcset="/img/Nike_Red_desktop.jpg" media="(min-width: 1024x)">
-                    <img class="scale-img" src="/img/Nike_Red_desktop.jpg" alt="Nike Red">
-                </picture>
-            </a>
+    <section class="bag-controls">
+        <div class="clearfix container message">You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code
+            <span>nexday</span> at checkout</div>
+        <div class="clearfix container">
+            <div class="empty-bag">Empty bag</div>
+            <div class="general-btn">Buy now</div>
+            <div class="total-price">
+                <div>Total Cost</div>
+                <div>£0.00</div>
+            </div>
         </div>
-        <div class="right-banner">
-            <a href="#">
-                <picture>
-                    <source srcset="/img/right_banner_tablet.jpg" media="(max-width: 1023px)">
-                    <source srcset="/img/right_banner_desktop.jpg" media="(min-width: 1024x)">
-                    <img class="scale-img" src="/img/right_banner_desktop.jpg" alt="Sale">
-                </picture>
-            </a>
-        </div>
-    </section>
-    <section class="clearfix container new-arrivals">
-        <h2>New arrivals</h2>
-        <div class="clearfix" id="arrivals-holder"></div>
-
-        <script type="text/template" id="ul-templ">
-                <ul style="padding: 0">
-                    <% for (let i = 0; i < 4; i++) { %>
-                        <li id="<%-items[i].id%>">
-                            <div class="item-wrapper">
-                                <a href="#">
-                                    <div class="img-container">
-                                        <img class="item-img" src="/img/<%-items[i].title.replace(/ /g, "_")%>.png" alt="<%-items[i].title%>" width="240"  height="340">
-                                        <!--<div class="background-black"></div>
-                                        <div>View item</div>-->
-                                        <span class="new-label" style="<%-items[i].hasNew ? 'display: block' : 'display: none'%>">NEW</span>
-                                    </div>
-                                    <span class="item-title"><%-items[i].title%></span>
-                                    <span>£<%-items[i].discountedPrice.toFixed(2)%></span>
-                                </a>
-                            </div>
-                        </li>
-                    <% } %>
-                </ul>
-        </script>
-        <a class="general-btn" href="/catalog.html">All arrivals</a>
     </section>
     <footer>
         <div class="clearfix footer-wrapper">
@@ -243,18 +165,14 @@
     </footer>
     <script>
         let inputElem = document.querySelector('#search-field');
-        inputElem.onblur = function() {
-          this.style.opacity = 0;
+        inputElem.onblur = function () {
+            this.style.opacity = 0;
         }
-        inputElem.onfocus = function() {
+        inputElem.onfocus = function () {
             this.style.opacity = 1;
         }  
     </script>
     <script src="/compiledJs/menuFunctions.js"></script>
-    <script src="/compiledJs/slider.js"></script>
-    <script src="/compiledJs/catalogFunctions.js"></script>
-    <script src="/compiledJs/catalogTemplate.js"></script>
-    <script src="/compiledJs/start.js"></script>
 </body>
 
 </html>

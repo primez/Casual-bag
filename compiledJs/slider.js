@@ -1,17 +1,19 @@
+'use strict';
+
 (function () {
-    let sliderContainer = document.querySelector('.slider-container');
-    let slides = sliderContainer.querySelectorAll('.slides > div');
+    var sliderContainer = document.querySelector('.slider-container');
+    var slides = sliderContainer.querySelectorAll('.slides > div');
 
-    let firstSlideBtn = sliderContainer.querySelector('#first-slide-btn');
-    let secondSlideBtn = sliderContainer.querySelector('#second-slide-btn');
-    let thirdSlideBtn = sliderContainer.querySelector('#third-slide-btn');
-    let buttons = [firstSlideBtn, secondSlideBtn, thirdSlideBtn];
+    var firstSlideBtn = sliderContainer.querySelector('#first-slide-btn');
+    var secondSlideBtn = sliderContainer.querySelector('#second-slide-btn');
+    var thirdSlideBtn = sliderContainer.querySelector('#third-slide-btn');
+    var buttons = [firstSlideBtn, secondSlideBtn, thirdSlideBtn];
 
-    let arrowLeft = sliderContainer.querySelector('.left-arrow');
-    let arrowRight = sliderContainer.querySelector('.right-arrow');
+    var arrowLeft = sliderContainer.querySelector('.left-arrow');
+    var arrowRight = sliderContainer.querySelector('.right-arrow');
 
-    let currentSlideIndex = 0;
-    let timeoutId = 0;
+    var currentSlideIndex = 0;
+    var timeoutId = 0;
 
     firstSlideBtn.onclick = changeSlideByButton;
     secondSlideBtn.onclick = changeSlideByButton;
@@ -25,12 +27,11 @@
         changeSlideByArrow(++currentSlideIndex);
     };
 
-
     setSlideTimeout();
 
     function changeSlideByButton() {
-        let slideId = this.dataset.id;
-        let slideToDisplay = sliderContainer.querySelector('#' + slideId);
+        var slideId = this.dataset.id;
+        var slideToDisplay = sliderContainer.querySelector('#' + slideId);
 
         displayOneSlide(slideToDisplay);
         updateCurrentIndex(slideToDisplay);
@@ -47,7 +48,7 @@
             currentSlideIndex = slides.length - 1;
         }
 
-        let slideToDisplay = slides[currentSlideIndex];
+        var slideToDisplay = slides[currentSlideIndex];
 
         displayOneSlide(slideToDisplay);
         checkOneButton(currentSlideIndex);
@@ -63,7 +64,7 @@
     }
 
     function updateCurrentIndex(slideToDisplay) {
-        for (let i = 0; i < slides.length; i++) {
+        for (var i = 0; i < slides.length; i++) {
             if (slides[i].id === slideToDisplay.id) {
                 currentSlideIndex = i;
                 return;
@@ -75,7 +76,7 @@
         slides.forEach(function (slide) {
             slide.hidden = true;
         });
-        slideToDisplay.style.opacity = "0";
+
         slideToDisplay.hidden = false;
     }
 
@@ -84,7 +85,7 @@
             button.checked = false;
         });
 
-        let buttonToCheck = buttons[buttonIndex];
+        var buttonToCheck = buttons[buttonIndex];
         buttonToCheck.checked = true;
     }
 })();

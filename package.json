@@ -1,7 +1,7 @@
 {
   "name": "casual-bag",
   "version": "1.0.0",
-  "description": "Simple e-commerce solution. Run npx babel js --watch --out-dir lib --presets=babel-preset-es2015",
+  "description": "Simple e-commerce solution. Run npx babel js --watch --out-dir compiledJs --presets=babel-preset-es2015",
   "main": "main.js",
   "scripts": {},
   "keywords": [

@@ -1,0 +1,103 @@
+/*----------------------------------------------------bag-items */
+.bag-items, .bag-controls {
+    width: 100%;
+    min-width: 375px;
+    overflow-x: auto;
+}
+
+.bag-items div:nth-child(1) {
+    width: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 0.8em;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.bag-controls {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.message{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 1.1em;
+    margin-bottom: 2.5em;
+}
+
+.message span {
+    color: #f14a58;
+}
+
+.bag-controls div:nth-child(2) > div {
+    display: inline-block;
+}
+
+.bag-controls .empty-bag {
+    font: 13px 'RobotoBold'; 
+}
+
+.bag-controls .total-price {
+    text-align: right;
+}
+
+.bag-controls .total-price div:nth-child(1) {
+    font: 12px Roboto;
+}
+
+.bag-controls .total-price div:nth-child(2) {
+    font: 18px 'RobotoBold';
+}
+
+.bag-controls div:nth-child(2) > div {
+    margin-right: 315px; 
+}
+
+.bag-controls div:nth-child(2) .total-price {
+    margin-right: 30px; 
+}
+
+.bag-controls div:nth-child(2) .empty-bag {
+    margin-left: 30px; 
+}
+
+.bag-controls .general-btn {
+    padding: 1.1em 4.9em;
+    margin-bottom: 2.5em;
+}
+
+@media screen and (max-width: 767px) {
+  /*----------------------------------------------------bag-items */  
+    .bag-items div:nth-child(1) {
+        font-size: 18px; 
+        padding: 1.1em 0.6em;
+    }
+
+    .message {
+        font-size: 10px;
+        padding: 0.8em;
+        margin-bottom: 2em;
+    }
+
+    .bag-controls .empty-bag, .bag-controls .total-price div:nth-child(1) {
+        font: 10px Roboto;
+    }
+
+    .bag-controls div:nth-child(2) > div {
+    margin-right: 40px; 
+    } 
+
+    .bag-controls div:nth-child(2) .total-price {
+        margin-right: 0; 
+    }
+    
+    .bag-controls .total-price div:nth-child(2) {
+        font-size: 14px;
+    }
+
+    .bag-controls .general-btn {
+        padding: 1em 1.7em;
+        margin-bottom: 2em;
+    }
+}

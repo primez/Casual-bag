@@ -11,65 +11,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/catalog.css">
+    <link rel="stylesheet" href="/css/main.tabletDesktop.css">
+    <link rel="stylesheet" href="/css/catalog.tabletDesktop.css">
 </head>
 
 <body>
-    <header class="container">
-        <div class="index-logo">
-            <p class="logo">Casual Bag</p>
-            <p class="mobile-logo">CB</p>
-        </div>
-        <div class="user-block">
-            <div class="sign-up">
-                <a href="#">E-mail sing up</a>
-            </div>
-            <div class="cart-info">
-                <p>Bag</p>
-            </div>
-        </div>
-        <nav class="button-border">
-            <span class="switcher"></span>
-            <span class="nav-icon"></span>
-            <span class="nav-icon-close dropdown-content"></span>
-            <div class="dropdown-content nav-menu">
-                <ul>
-                    <li>
-                        <a class="nav-link" href="#">Women</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Men</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Handbags</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Accessories</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Sale</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">New Arrivals</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Clearance</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Store Locator</a>
-                    </li>
-                </ul>
-                <div class="search-panel">
-                    <input type="search" id="search-field" placeholder="Style Name">
-                    <span class="search-icon"></span>
+    <header>
+        <div>
+            <div class="clearfix top-row">
+                <div class="index-logo">
+                    <a href="/start.html" class="logo">
+                        <p>Casual Bag</p>
+                    </a>
+                    <a href="/start.html" class="mobile-logo">
+                        <p>CB</p>
+                    </a>
+                </div>
+                <div class="user-block">
+                    <div class="sign-up">
+                        <a href="#">E-mail sing up</a>
+                    </div>
+                    <div class="cart-info">
+                        <a href="/shopping-bag.html">Bag</a>
+                    </div>
                 </div>
             </div>
-        </nav>
+            <nav class="button-border">
+                <span class="switcher"></span>
+                <span class="nav-icon"></span>
+                <span class="nav-icon-close dropdown-content"></span>
+                <div class="clearfix dropdown-content nav-menu">
+                    <ul>
+                        <li>
+                            <a class="nav-link">Women</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Men</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Handbags</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Accessories</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Sale</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">New Arrivals</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Clearance</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Store Locator</a>
+                        </li>
+                    </ul>
+                    <div class="search-panel">
+                        <input class="collapsed" type="search" id="search-field" placeholder="Style Name">
+                        <span class="collapsed gradient-white"></span>
+                        <span class="search-icon"></span>
+                    </div>
+                </div>
+            </nav>
     </header>
     <section class="filters">
         <ul>
-            <li>
+            <li class="category">
                 Fashion
-                <ul>
+                <span></span>
+                <ul class="options">
                     <li>Not selected</li>
                     <li>Nail the 90s</li>
                     <li>Casual style</li>
@@ -79,17 +90,19 @@
                     <li>Classical style</li>
                 </ul>
             </li>
-            <li>
+            <li class="category">
                 Product type
-                <ul>
+                <span></span>
+                <ul class="options">
                     <li>Not selected</li>
                     <li>Coats &#38; Jackets</li>
                     <li>Dresses</li>
                     <li>Jersey Tops</li>
                 </ul>
             </li>
-            <li>Color
-                <ul>
+            <li class="category">Color
+                <span></span>
+                <ul class="options">
                     <li>Not selected</li>
                     <li>Black</li>
                     <li>Blue</li>
@@ -98,8 +111,9 @@
                     <li>Golden</li>
                 </ul>
             </li>
-            <li>Brand
-                <ul>
+            <li class="category">Brand
+                <span></span>
+                <ul class="options">
                     <li>Not selected</li>
                     <li>Chi Chi London</li>
                     <li>Antipodium</li>
@@ -108,8 +122,9 @@
                     <li>River Island</li>
                 </ul>
             </li>
-            <li>Size
-                <ul>
+            <li class="category">Size
+                <span></span>
+                <ul class="options">
                     <li>Not selected</li>
                     <li>UK 2</li>
                     <li>UK 18</li>
@@ -121,8 +136,9 @@
                     <li>UK 22</li>
                 </ul>
             </li>
-            <li>Price range
-                <ul>
+            <li class="category">Price range
+                <span></span>
+                <ul class="options">
                     <li>Not selected</li>
                     <li>To £99</li>
                     <li>£100-£299</li>
@@ -131,10 +147,10 @@
             </li>
         </ul>
     </section>
-    <section class="container catalog-items">
+    <section class="clearfix container catalog-items">
         <div id="catalog-holder"></div>
         <script type="text/template" id="ul-templ">
-            <ul style="padding: 0">
+            <ul class="clearfix" style="padding: 0">
                 <% for (let i = 0; i < 12; i++) { %>
                     <li id="<%-items[i].id%>" data-category="<%-items[i].category%>" data-fashion="<%-items[i].fashion%>" data-colors="<%-items[i].colors%>" data-sizes="<%-items[i].sizes%>">
                         <div class="item-wrapper">
@@ -150,11 +166,11 @@
                                     <span class="placeholder"><%-items[i].placeholder%></span>
                                 <%} else {%>
                                     <% if (items[i].price != items[i].discountedPrice) { %>
-                                        <span class="full-price"><%-items[i].price%></span>
-                                        <span class="discount">-<%-100 - (items[i].discountedPrice * 100 / items[i].price)%>%</span>
-                                        <span>£<%-items[i].discountedPrice%>
+                                        <span class="full-price">£<%-items[i].price.toFixed(2)%></span>
+                                        <span class="discount">-<%-Math.round(100 - (items[i].discountedPrice * 100 / items[i].price))%>%</span>
+                                        <span class="discounted-price">£<%-items[i].discountedPrice.toFixed(2)%>
                                     <%} else {%>
-                                    <span>£<%-items[i].discountedPrice%>
+                                    <span>£<%-items[i].discountedPrice.toFixed(2)%>
                                     <% } %></span>
                                 <% } %>
                             </a>
@@ -163,78 +179,118 @@
                 <% } %>
             </ul>
         </script>
+        <div class="catalog-banner">
+            <p>Last weekend
+                <span>extra 50%</span> off on all reduced boots and shoulder bags</p>
+            <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at
+                11:59 GMT on March 1st 2015</p>
+        </div>
+        <a class="general-btn" href="#">Show more</a>
     </section>
-
-
-
+    <section class="bottom-banner">
+        <div>
+            <picture>
+                <source srcset="/img/adidas_mobile.png" media="(max-width: 767px)">
+                <source srcset="/img/adidas_tablet.jpg" media="(max-width: 1023px)">
+                <source srcset="/img/adidas_desktop.jpg" media="(min-width: 1024x)">
+                <img class="scale-img" src="/img/adidas_desktop.jpg" alt="Adidas Blue For men">
+            </picture>
+        </div>
+        <div>
+            <picture>
+                <source srcset="/img/repair_tablet.jpg" media="(max-width: 1023px)">
+                <source srcset="/img/repair_desktop.jpg" media="(min-width: 1024x)">
+                <img class="scale-img" src="/img/repair_desktop.jpg" alt="Repair Patches">
+            </picture>
+        </div>
+        <div>
+            <img src="/img/bag_desktop.jpg" alt="Sale">
+        </div>
+    </section>
     <footer>
-        <div class="footer-left-side">
-            <div class="footer-column">
-                <div class="footer-column-title">Quick Links</div>
-                <div class="footer-info">
-                    <a href="#">Store locator</a>
-                    <a href="#">Gift cards</a>
-                    <a href="#">Size guide</a>
-                    <a href="#">About us</a>
-                    <a href="#">Support</a>
+        <div class="clearfix footer-wrapper">
+            <div class="footer-top">
+                <div class="clearfix footer-left-side">
+                    <div class="footer-column">
+                        <div class="footer-column-title left-side-title">Quick Links</div>
+                        <div class="footer-info">
+                            <a href="#">Store locator</a>
+                            <a href="#">Gift cards</a>
+                            <a href="#">Size guide</a>
+                            <a href="#">About us</a>
+                            <a href="#">Support</a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title left-side-title">Customer Care</div>
+                        <div class="footer-info">
+                            <a href="#">Customer service</a>
+                            <a href="#">Track my order</a>
+                            <a href="#">Return policy</a>
+                            <a href="#">Shipping &#38; delivery</a>
+                            <a href="#">Contact us</a>
+                            <a href="#">Careers</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix footer-right-side">
+                    <div class="footer-column">
+                        <div class="footer-column-title right-side-title">Questions</div>
+                        <div class="social-twitter footer-info">
+                            <span class="sprite"></span>Tweet us
+                            <b>@casual_bag</b>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title right-side-title">Order by phone</div>
+                        <div class="footer-info">8-800-409-47-12</div>
+                    </div>
+                    <div class="footer-under-column">
+                        <div class="delivery-info">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5
+                            days.
+                        </div>
+                        <div class="social-block">
+                            <span class="facebook sprite"></span>
+                            <span class="twitter sprite"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-column">
-                <div class="footer-column-title">Customer Care</div>
-                <div class="footer-info">
-                    <a href="#">Customer service</a>
-                    <a href="#">Track my order</a>
-                    <a href="#">Return policy</a>
-                    <a href="#">Shipping &#38; delivery</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Careers</a>
+            <div class="footer-bottom">
+                <div class="footer-bottom-right">
+                    <div>
+                        <span>Legal notice</span>
+                        <span>Privacy policy</span>
+                        <span>Site map</span>
+                    </div>
+                    <div class="social-block-mobile">
+                        <span class="facebook sprite"></span>
+                        <span class="twitter sprite"></span>
+                    </div>
+                </div>
+                <div class="footer-bottom-left">
+                    <div>© 2010–2015, The Template Group inc.</div>
+                    <div class="sharing">
+                        <span>Share</span>
+                        <span>1 437</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer-right-side">
-            <div class="footer-column">
-                <div class="footer-column-title">Questions</div>
-                <div class="social-twitter footer-info">
-                    <span class="sprite"></span>Tweet us
-                    <b>@casual_bag</b>
-                </div>
-            </div>
-            <div class="footer-column">
-                <div class="footer-column-title">Order by phone</div>
-                <div class="footer-info">8-800-409-47-12</div>
-            </div>
-            <div class="footer-under-column">
-                <div class="delivery-info">We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</div>
-                <div class="social-block">
-                    <span class="facebook sprite"></span>
-                    <span class="twitter sprite"></span>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom-right">
-            <div>
-                <span>Legal notice</span>
-                <span>Privacy policy</span>
-                <span>Site map</span>
-            </div>
-            <div class="social-block-mobile">
-                <span class="facebook sprite"></span>
-                <span class="twitter sprite"></span>
-            </div>
-        </div>
-        <div class="footer-bottom-left">
-            <div>© 2010–2015, The Template Group inc.</div>
-            <div class="sharing">
-                <span>Share</span>
-                <span>1 437</span>
-            </div>
-        </div>
-
     </footer>
-    <script src="/lib/menu.mobile.js"></script>
-    <script src="/lib/catalogFunctions.js"></script>
-    <script src="/lib/catalogTemplate.js"></script>
-    <script src="/lib/catalog.js"></script>
+    <script>
+        let inputElem = document.querySelector('#search-field');
+        inputElem.onblur = function () {
+            this.style.opacity = 0;
+        }
+        inputElem.onfocus = function () {
+            this.style.opacity = 1;
+        }  
+    </script>
+    <script src="/compiledJs/menuFunctions.js"></script>
+    <script src="/compiledJs/catalogFunctions.js"></script>
+    <script src="/compiledJs/catalogTemplate.js"></script>
+    <script src="/compiledJs/catalog.js"></script>
 </body>
 
 </html>
